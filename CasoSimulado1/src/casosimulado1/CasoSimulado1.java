@@ -149,15 +149,19 @@ public static void Ejercicio3(){
                                         notaFinal=resultado.getNotaFinal();
                                         aprobado=resultado.getAprobado();
 
-                                        System.out.println("Nombre: "+nombre+"\nCedula: "+cedula+"\nNotaFinal: "+notaFinal+"\nAprobado: "+aprobado);break;
-                                    }    
-                                }
-		    
-		    // No es necesario que corras el vector de nuevo porque aparte de que ocupas 2x recursos, solo impris esto de nuevo, tenes que abrir un else dentro del for y que muestre el JOption y ya
-                                for (CasoSimulado1 estudiante : vector) {
-                                    if (estudiante.getCedula()!=cedulaB) {
-                                        JOptionPane.showMessageDialog(null, "NO SE HA ENCONTRADO NINGUN ESTUDIANTE CON ESA CEDULA", "ERROR", JOptionPane.WARNING_MESSAGE);break;
+                                        System.out.println("Nombre: "+nombre+"\nCedula: "+cedula+"\nNotaFinal: "+notaFinal+"\nAprobado: "+aprobado);
+                                        estado = false;
                                     }
+                                    else
+                                    {
+                                        estado = true;
+//                                        JOptionPane.showMessageDialog(null, "NO SE HA ENCONTRADO NINGUN ESTUDIANTE CON ESA CEDULA", "ERROR", JOptionPane.WARNING_MESSAGE);
+                                    }
+                                }
+                                if (estado)
+                                {
+                                    JOptionPane.showMessageDialog(null, "NO SE HA ENCONTRADO NINGUN ESTUDIANTE CON ESA CEDULA", "ERROR", JOptionPane.WARNING_MESSAGE);
+                                }
                                     }
                                 break;
                         case 3: System.out.println("GRACIAS POR USAR NUESTRA APP");break;
